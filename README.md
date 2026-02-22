@@ -1,36 +1,71 @@
-# SLA Risk Prediction & Detection
+# SLA Breach Prediction – Operational Intelligence Project
 
-## Project Overview
-This project predicts SLA breaches in operational case management workflows. Inspired by real-world global mobility operations, it demonstrates end-to-end data engineering, feature engineering, and predictive modeling.
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![ML](https://img.shields.io/badge/ML-RandomForest%2CXGBoost-green)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-## Problem Statement
-Identify cases at risk of missing SLA deadlines, enabling proactive workload balancing and decision support.
+---
 
-## Dataset
-- Synthetic dataset simulating case workflows
-- ~5,000 rows
-- Features include case type, processing stage, officer load, document completeness, and duration
+## **Project Overview**
 
-## Pipeline
-1. Data Cleaning & Preprocessing
-2. Feature Engineering
-3. Model Training & Evaluation
-4. Insights & Visualizations
+This project predicts **Service Level Agreement (SLA) breaches** in a global mobility services environment. It demonstrates an end-to-end **data engineering, feature engineering, and machine learning pipeline** using synthetic SLA case data.
 
-## Modeling
-- Logistic Regression, Random Forest, XGBoost
-- Evaluation metrics: Accuracy, Precision, Recall, F1, ROC-AUC
+The goal is to help case management teams and attorneys monitor **SLA performance, case lifecycle progression, and compliance deadlines**, and to enable **data-driven process optimization**.
 
-## Key Findings
-- Feature importance analysis
-- Identification of high-risk patterns
+---
 
-## How to Run
-1. Install dependencies: `pip install -r requirements.txt`  
-2. Run notebooks in order: 01 → 02 → 03  
-3. Outputs saved in `outputs/`
+## **Motivation**
 
-## Learnings & Next Steps
-- Demonstrated end-to-end pipeline creation
-- Prepared dataset for potential real-time SLA monitoring
-- Extension: implement streaming SLA predictions using Kafka & Spark
+In operational and legal environments, SLA breaches can have **financial and compliance consequences**. Predicting which cases are at risk allows teams to:
+
+- Prioritize high-risk cases
+- Allocate resources efficiently
+- Reduce delays and improve service quality
+
+---
+
+## **Dataset**
+
+The dataset is **synthetic** and designed to simulate realistic SLA operations:
+
+| Feature | Description |
+|---------|-------------|
+| `case_id` | Unique identifier for each case |
+| `case_type` | Type of case (e.g., Tax, Relocation, Immigration) |
+| `country` | Client location |
+| `processing_stage` | Current stage in case workflow |
+| `officer_id` | Assigned officer |
+| `officer_load` | Number of active cases for officer |
+| `documents_missing` | Number of missing documents |
+| `duration_days` | Days since case creation |
+| `sla_days` | SLA threshold in days |
+| `breached` | Target variable: True if SLA exceeded |
+
+**Synthetic Dataset Size:** 5,000+ rows
+
+---
+
+## **Project Structure**
+
+```text
+SLA-Prediction/
+│
+├── data/
+│   ├── raw/                 # Raw CSV dataset
+│   └── processed/           # Cleaned & feature-engineered datasets
+│
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   └── 03_modeling.ipynb
+│
+├── src/
+│   ├── data_processing.py
+│   ├── feature_engineering.py
+│   └── modeling.py
+│
+├── outputs/
+│   └── models/              # Saved trained ML models
+│
+├── README.md
+└── requirements.txt
