@@ -1,26 +1,59 @@
 import pandas as pd
+import os
 
-def load_raw_data(path="data/raw/sla_cases.csv"):
+
+# ------------------------------------------------
+# Load raw dataset
+# ------------------------------------------------
+def load_raw_data(path: str) -> pd.DataFrame:
     """
-    Load raw SLA dataset.
+    Load raw mobility SLA dataset.
     """
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Raw dataset not found at: {path}")
+
     df = pd.read_csv(path)
+    print(f"Loaded raw dataset: {df.shape[0]} rows, {df.shape[1]} columns")
     return df
 
-def clean_data(df):
+
+# ------------------------------------------------
+# Clean dataset
+# ------------------------------------------------
+def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     """
-    Basic cleaning: handle missing values, ensure types.
+    Basic cleaning and type enforcement.
     """
-    df = df.fillna(0)
-    
-    # Ensure boolean column
-    if "breached" in df.columns:
-        df["breached"] = df["breached"].astype(bool)
+
+    # Drop duplicate cases
+    df = df.drop_duplicates()
+
+    # Convert boolean target safely
+    if "sla_breach" in df.columns:
+        df["sla_breach"] = df["sla_breach"].astype(int)
+
+    # Fill numeric missing values
+    numeric_cols = df.select_dtypes(include=["number"]).columns
+    df[numeric_cols] = df[numeric_cols].fillna(0)
+
+    # Fill categorical missing values
+    cat_cols = df.select_dtypes(include=["object"]).columns
+    df[cat_cols] = df[cat_cols].fillna("Unknown")
+
     return df
 
-def save_processed_data(df, path="data/processed/df_cleaned.csv"):
+
+# ------------------------------------------------
+# Save processed dataset
+# ------------------------------------------------
+def save_processed_data(df: pd.DataFrame, path: str):
     """
-    Save cleaned dataframe for further processing.
+    Save processed dataframe for modeling.
+    Automatically creates the directory if needed.
     """
+
+    directory = os.path.dirname(path)
+    os.makedirs(directory, exist_ok=True)
+
     df.to_csv(path, index=False)
-    print(f"Cleaned data saved to {path}")
+    print(f"✅ Processed dataset saved to: {path}")
