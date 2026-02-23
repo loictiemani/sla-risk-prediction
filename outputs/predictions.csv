@@ -1,0 +1,26 @@
+case_id,case_type,country,processing_stage,office_id,office_load,priority,document_complexity,documents_missing,client_response_delay_days,reassignment_count,days_in_stage,sla_target_days,total_processing_days,predicted_risk,predicted_breach
+3407,Visa Renewal,DE,Government Review,117,104,Normal,Low,1,17,2,29,30,74.6,1.0,1
+758,Tax,AU,Government Review,111,44,Normal,Medium,2,11,0,31,21,69.1,1.0,1
+4761,Payroll,CA,Government Review,107,108,Normal,Medium,5,16,1,7,14,64.8,1.0,1
+2319,Tax,UK,Government Review,107,40,Urgent,Low,2,6,1,4,14,40.6,1.0,1
+2756,Relocation,US,Government Review,104,72,Normal,Low,1,30,1,33,35,83.9,1.0,1
+2367,Visa Renewal,US,Submission,109,59,Normal,High,6,29,1,6,30,86.7,1.0,1
+2917,Payroll,US,Intake,100,105,Normal,Medium,1,21,0,24,14,58.5,1.0,1
+3709,Tax,US,Submission,115,61,Normal,Medium,2,5,1,28,21,52.5,1.0,1
+641,Relocation,CA,Government Review,107,85,Normal,Low,4,22,2,4,35,86.3,1.0,1
+3216,Tax,US,Government Review,108,75,Normal,Low,4,15,3,19,21,75.8,1.0,1
+4393,Relocation,CA,Government Review,108,121,Normal,Low,3,22,0,19,35,78.1,1.0,1
+4715,Work Permit,DE,Closure,111,120,Normal,Medium,4,19,0,38,45,74.5,0.9981320907617505,1
+3236,Work Permit,UK,Documentation,115,98,Normal,Medium,0,17,2,7,45,67.9,0.9981172336524751,1
+616,Payroll,DE,Submission,102,82,Normal,High,3,16,0,41,14,76.4,0.997852079944225,1
+2191,Tax,UK,Documentation,108,128,Normal,Medium,0,22,2,20,21,68.5,0.9976893749999999,1
+1869,Work Permit,CA,Government Review,114,101,Urgent,High,5,7,2,40,38,96.8,0.9975950434669781,1
+2962,Tax,CA,Decision,104,25,Normal,Medium,0,30,3,19,21,74.7,0.9975893319523563,1
+4302,Visa Renewal,UK,Closure,115,75,Normal,Low,1,5,0,32,30,36.9,0.990474418466978,1
+4545,Work Permit,US,Submission,118,37,Normal,Low,2,21,0,24,45,58.4,0.9746282686548065,1
+2828,Work Permit,AU,Documentation,106,24,Normal,Low,1,18,0,19,45,56.3,0.973365764227132,1
+3485,Relocation,AU,Government Review,110,45,Normal,Low,0,5,0,26,35,49.4,0.9690676258509479,1
+3625,Visa Renewal,AU,Government Review,103,111,Normal,Low,4,0,2,14,30,71.3,0.9516916132047437,1
+3528,Work Permit,CA,Government Review,108,89,Urgent,Low,1,0,3,14,38,59.5,0.8894377569349662,0
+4172,PR Application,UK,Government Review,115,42,Urgent,High,1,8,4,34,83,94.1,0.42673803275050476,0
+3336,PR Application,AU,Submission,107,93,Normal,Low,0,0,0,16,90,38.7,0.010581666006037391,0
