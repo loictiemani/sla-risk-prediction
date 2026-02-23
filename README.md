@@ -140,7 +140,7 @@ The goal is to augment human workflow management, not replace it.
 ---
 
 ## Repository Structure
-```text
+```
 sla-risk-prediction/
 │
 ├── README.md
@@ -181,12 +181,7 @@ sla-risk-prediction/
     ├── feature_importance.png
     └── subgroup_recall.png
 
-```text
-
-
-
-
-
+```
 
 ---
 
