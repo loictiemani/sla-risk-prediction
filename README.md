@@ -140,23 +140,45 @@ The goal is to augment human workflow management, not replace it.
 ---
 
 ## Repository Structure
-data/
- raw/ synthetic generated cases
- processed/ modeling dataset
-models/
- saved trained model
-notebooks/
- 01_exploration.ipynb
- 02_feature_engineering.ipynb
- 03_modeling.ipynb
- 04_interpretability.ipynb
- 05_error_analysis.ipynb
- 06_demo_scoring.ipynb
-src/
- config.py
- data_processing.py
-outputs/
- predictions.csv
+sla-risk-prediction/
+│
+├── README.md
+├── requirements.txt
+│
+├── data/
+│   ├── raw/
+│   │   └── mobility_sla_cases.csv
+│   ├── processed/
+│   │   └── mobility_sla_cases_clean.csv
+│   └── README.md
+│
+├── notebooks/
+│   ├── 01_exploration.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_modeling.ipynb
+│   ├── 04_interpretability.ipynb
+│   ├── 05_error_analysis.ipynb
+│   └── 06_demo_scoring.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── data_processing.py
+│   ├── features.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── predict.py
+│
+├── models/
+│   └── sla_rf_model.pkl
+│
+├── outputs/
+│   └── predictions.csv
+│
+└── images/
+    ├── roc_curve.png
+    ├── feature_importance.png
+    └── subgroup_recall.png
 
 
 
